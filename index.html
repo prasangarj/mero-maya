@@ -30,7 +30,40 @@ p{font-size:17px;line-height:1.75;margin:0 0 20px;white-space:normal} .heart{tex
 }
 .card{z-index:1}
 @media(prefers-reduced-motion:reduce){.float-item{animation:none}}
+
+.memory-section{margin:28px 0 30px;text-align:center}
+.memory-title{font-size:14px;color:#c45d86;letter-spacing:1.5px;margin:0 0 16px;font-style:italic}
+.polaroid-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+.polaroid{background:#fff;padding:10px 10px 30px;border-radius:6px;box-shadow:0 10px 25px rgba(139,53,88,.18);position:relative;transition:transform .25s ease}
+.polaroid:first-child{transform:rotate(-2deg)}.polaroid:last-child{transform:rotate(2deg)}
+.polaroid:hover{transform:rotate(0deg) scale(1.02)}
+.polaroid:before{content:"";position:absolute;width:58px;height:18px;background:rgba(248,190,211,.65);top:-9px;left:50%;transform:translateX(-50%) rotate(-2deg);z-index:2}
+.polaroid video{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:3px;background:#fbe8ef}
+.polaroid .caption{position:absolute;left:0;right:0;bottom:8px;color:#bd587f;font-size:12px;font-style:italic}
+.memory-divider{margin:22px auto 6px;color:#dc87a7;font-size:20px;letter-spacing:6px}
+@media(max-width:560px){.polaroid-row{grid-template-columns:1fr;gap:25px}.polaroid{max-width:330px;margin:auto}.polaroid:first-child{transform:rotate(-1.5deg)}.polaroid:last-child{transform:rotate(1.5deg)}}
+
+#love-lock{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;padding:22px;background:linear-gradient(135deg,#ffdce9,#fff5f9 48%,#f8c9dc);transition:opacity .65s ease,visibility .65s ease}
+#love-lock.unlocked{opacity:0;visibility:hidden;pointer-events:none}
+.lock-card{width:min(420px,92vw);background:rgba(255,255,255,.95);border:3px solid #e78caf;box-shadow:0 18px 55px rgba(154,53,94,.2),inset 0 0 0 7px #fff0f6;border-radius:28px;padding:34px 26px;text-align:center;color:#8f365b}
+.lock-flowers{font-size:24px;letter-spacing:5px;margin-bottom:12px}.lock-card h2{margin:4px 0 8px;font-size:29px;color:#b43b69}.lock-card p{font-size:14px;line-height:1.5;margin:0 0 20px;color:#c06b8b}
+.lock-input{width:100%;border:2px solid #f0b1c9;border-radius:999px;padding:13px 17px;font:inherit;text-align:center;outline:none;background:#fffafd;color:#8f365b;box-shadow:inset 0 2px 8px rgba(190,80,120,.05)}
+.lock-input:focus{border-color:#d76c96;box-shadow:0 0 0 4px rgba(231,140,175,.15)}
+.lock-button{margin-top:13px;width:100%;border:0;border-radius:999px;padding:13px 18px;background:linear-gradient(135deg,#d85f8e,#b73e6c);color:white;font:inherit;font-weight:bold;cursor:pointer;box-shadow:0 8px 18px rgba(180,60,105,.22)}
+.lock-error{height:20px;margin-top:10px;font-size:13px;color:#b73e6c}.lock-heart{font-size:35px;animation:lockPulse 1.8s ease-in-out infinite}@keyframes lockPulse{50%{transform:scale(1.12)}}
 </style></head><body>
+<div id="love-lock">
+  <div class="lock-card">
+    <div class="lock-heart">💗</div>
+    <div class="lock-flowers">🌸 ✦ 🌷 ✦ 🌸</div>
+    <h2>Mero Maya</h2>
+    <p>this little piece of my heart is only for you ♡</p>
+    <input id="love-password" class="lock-input" type="password" placeholder="enter our secret password" autocomplete="off" aria-label="Password">
+    <button id="love-unlock" class="lock-button" type="button">Open my letter ♡</button>
+    <div id="love-error" class="lock-error"></div>
+  </div>
+</div>
+
 <div class="floating-scene" aria-hidden="true">
   <span class="float-item heart1">♡</span>
   <span class="float-item heart2">♥</span>
@@ -47,4 +80,46 @@ p{font-size:17px;line-height:1.75;margin:0 0 20px;white-space:normal} .heart{tex
 <div class="flower f1">🌸</div><div class="flower f2">🌷</div><div class="flower f3">🌺</div><div class="flower f4">🌸</div>
 <main class="card"><div class="floral-border">🌸　❀　🌷　❀　🌸</div><div class="heart">♡ 🌸 ♡</div><h1>Mero Maya 💗</h1><div class="subtitle">A little piece of my heart, just for you</div>
 <p><strong>Hi dallu,</strong></p><p>Mero sunshine, mero mutu mero everything, 3 years?? 3 freaking years of togetherness but it feels like i have known you since my past life matra haina LIVES. Unlikely 2 years ago it does not feel like the time went instantly infact the time is moving so so so slow. Tesmathi like since I have decided to come to nepal next year and I had been planning that for a while it feels jhan lamo k because tyo anticipation of meeting you, feeling your warmth (fuck I miss it so much and I cannooooooott wait). Ani yk what hami bhetne bittikai ta hamro skin nai glow hunch hola at least mero chai huncha because like timro presence like timi tea huda hai malai Kasto timi le like idk how to explain it as someone said, you feel like bathing in sunlight jasto huncha k.</p><p>Aba dherai chumuwummy bhayo, I am so sorry Maya Maile timi lai etiiiiiii dherai choti hurt gareko chu jaile ni timilai heal na tune gar idk if you heal or look at me the same way tara it won’t matter the way I treat you the way I am towards you I am always here for you Maya. Timi le malanga risau karau j gara ma sangai hunchu timi lai jaile 100% dinchu timi lai mero pyaro Maya.</p><p>Maya timi mero budi hune? Hehe... herana Baby we have been doing this for 2 years and 1 month hai ani like there is so much more to come and I can freaking wait. Like exactly 294 days, 22 hours, 0 minutes, 0 seconds...21hrs, 59 mins, 59 seconds..58…57… hehe and I am still counting hehe. I cannot wait to meet you the first hug after 3 years the first kiss the first bite heheh, I miss you so much and I cannot put it into words how much I LOVE YOU. Youre literally my everything my soulmate my rival my partner my whole heart my whole universe. I love you to the end of universe and further. I love you till the end of time and further I love you. I love you. I love you. I love you. <strong>I LOVE YOUUUUUUU.</strong></p><p>Yours and only yours,</p><p>Badar &lt;3</p>
-<div class="heart">🌸 💗 🌸</div><div class="floral-border">🌸　❀　🌷　❀　🌸</div><div class="tiny-note">made with a little piece of my heart ♡</div></main></body></html>
+
+<section class="memory-section">
+  <div class="memory-title">little pieces of us ♡</div>
+  <div class="polaroid-row">
+    <div class="polaroid">
+      <video controls playsinline preload="metadata">
+        <source src="memory-1.mp4" type="video/mp4">
+      </video>
+      <div class="caption">our little memory ♡</div>
+    </div>
+    <div class="polaroid">
+      <video controls playsinline preload="metadata">
+        <source src="memory-2.mp4" type="video/mp4">
+      </video>
+      <div class="caption">you & me 🌸</div>
+    </div>
+  </div>
+  <div class="memory-divider">♡ ✦ ♡</div>
+</section>
+<div class="heart">🌸 💗 🌸</div><div class="floral-border">🌸　❀　🌷　❀　🌸</div><div class="tiny-note">made with a little piece of my heart ♡</div></main>
+<script>
+(function(){
+  const lock = document.getElementById('love-lock');
+  const input = document.getElementById('love-password');
+  const button = document.getElementById('love-unlock');
+  const error = document.getElementById('love-error');
+  function unlock(){
+    if(input.value === 'MaYehiChu'){
+      lock.classList.add('unlocked');
+      error.textContent = '';
+      setTimeout(()=>lock.remove(),700);
+    } else {
+      error.textContent = 'not quite, maya ♡';
+      input.value = '';
+      input.focus();
+    }
+  }
+  button.addEventListener('click', unlock);
+  input.addEventListener('keydown', function(e){ if(e.key === 'Enter') unlock(); });
+  setTimeout(()=>input.focus(),300);
+})();
+</script>
+</body></html>
